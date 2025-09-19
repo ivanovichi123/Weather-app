@@ -6,14 +6,21 @@
     <title>Weather app</title>
   </head>
   <body>
-    <h1>Weather web</h1>
-    <p>Just put your location and see the weather!!!!</p>
-    <form>
-      <label for="location">Insert your location</label>
-      <input type="text" id="location" />
-      <button>submit</button>
-    </form>
-    <p id="errorMsg"></p>
-    <p>Powered by Visual Crossing Weather</p>
+    <h1 id="title">Weather web</h1>
+    <p id="info">Just put your location and see the weather!!!!</p>
+    <div id="formBorder">
+      <form>
+        <label for="location">Insert your location: </label> <br />
+        <input type="text" id="location" placeholder="Queretaro" /> <br />
+        <button>Submit</button>
+      </form>
+    </div>
+    <div id="weatherToday">
+      <p id="errorMsg"></p>
+    </div>
+    <div id ="futureWeather"> 
+      Future weather
+    </div>
+    <footer>Powered by Visual Crossing Weather</footer>
   </body>
 </html>

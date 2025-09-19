@@ -1,4 +1,6 @@
 import "./style.css";
+import { pageLoad } from "./pageLoad";
+
 //Create an array for the objects that contain information about the weather
 const weatherInformation = [];
 
@@ -14,7 +16,7 @@ async function getWeather(location) {
   try {
     //Get the information form the website
     const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=QRLGUYRSTH8FAFTW9432A6B9D&unitGroup=metric&include=days,alerts,current,events&elements=datetime,tempmax,tempmin,description,feelslike,precipprob`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next5days?key=QRLGUYRSTH8FAFTW9432A6B9D&unitGroup=metric&include=days,alerts,current,events&elements=datetime,tempmax,tempmin,description,feelslike,precipprob`,
     );
     const theRealAnswer = await response.json();
     console.log(theRealAnswer);
@@ -35,7 +37,7 @@ async function getWeather(location) {
     weatherInformation.push(generalInfo);
 
     //"For" that gets the information in an object and push it to the "weatherInformation" array
-    for (let i = 0; i <= 14; i++) {
+    for (let i = 0; i <= 5; i++) {
       let daysInfo = new Object({
         day: theRealAnswer.days[i].datetime,
         description: theRealAnswer.days[i].description,
@@ -45,7 +47,10 @@ async function getWeather(location) {
       });
       weatherInformation.push(daysInfo);
     }
-    console.log(weatherInformation);
+    //Erase all the previous information of hte div
+    document.getElementById("weatherToday").textContent = "";
+
+    pageLoad(weatherInformation);
   } catch (error) {
     //Catch when an error occur
     console.log("Oh no", error);
