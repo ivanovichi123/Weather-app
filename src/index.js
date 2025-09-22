@@ -8,9 +8,6 @@ const weatherInformation = [];
 const location = document.getElementById("location");
 const form = document.querySelector("form");
 
-//Th element that display an error message
-const errorMsg = document.getElementById("errorMsg");
-
 //Function that retrieves the weather info and save it in objects
 async function getWeather(location) {
   try {
@@ -23,7 +20,9 @@ async function getWeather(location) {
 
     //Erase the previous information of the array of objects (weatherInformation) and the errorMsg
     weatherInformation.length = 0;
-    errorMsg.textContent = "";
+    document.getElementById("weatherToday").textContent = "";
+    document.getElementById("futureWeather").textContent = "";
+
 
     //Create an object with the general info from the place
     let generalInfo = new Object({
@@ -47,14 +46,17 @@ async function getWeather(location) {
       });
       weatherInformation.push(daysInfo);
     }
-    //Erase all the previous information of hte div
-    document.getElementById("weatherToday").textContent = "";
 
     pageLoad(weatherInformation);
+
   } catch (error) {
     //Catch when an error occur
     console.log("Oh no", error);
+    document.getElementById("weatherToday").textContent = "";
+    document.getElementById("futureWeather").textContent = "";
+    let errorMsg = document.createElement("p");
     errorMsg.textContent = "Oh no the location you submit does not exist :(";
+    document.getElementById("futureWeather").append(errorMsg);
   }
 }
 

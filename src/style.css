@@ -163,13 +163,14 @@ form > button {
 #futureWeather {
   grid-column: 1/2;
   grid-row: 4/5;
-  border: solid 3px black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #basicInfo {
   grid-column: 1/4;
   grid-row: 1/2;
-  /* border: solid 3px black; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,3 +221,62 @@ form > button {
 #precipitation > p {
   font-size: 2rem;
 }
+
+.future2 {
+  text-align: center;
+  padding-top: 2rem;
+  border-right: solid 2px black;
+}
+
+.future2 > p{
+  padding-top: 1rem;
+}
+
+
+.future3 {
+  text-align: center;
+  padding-top: 2rem;
+  border-right: solid 2px black;
+}
+
+.future3 > p{
+  padding-top: 1rem;
+}
+
+
+.future4 {
+  text-align: center;
+  padding-top: 2rem;
+  border-right: solid 2px black;
+}
+
+.future4 > p{
+  padding-top: 1rem;
+}
+
+
+.future5 {
+  text-align: center;
+  padding-top: 2rem;
+  border-right: solid 2px black;
+}
+
+.future5 > p{
+  padding-top: 1rem;
+}
+
+
+.future6 {
+  text-align: center;
+  padding-top: 2rem;
+  border-right: solid 2px black;
+}
+
+.future6 > p{
+  padding-top: 1rem;
+}
+
+
+
+
+

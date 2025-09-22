@@ -27,7 +27,6 @@ function pageLoad(weatherInfo) {
     specificInfoThree.setAttribute("id", "precipitation");
 
     //Put information on the basicInfo div
-    let tempBr = document.createElement("br");
     let addressTitle = document.createElement("h2");
     addressTitle.textContent = address;
     let latitudeLongitude = document.createElement("p");
@@ -48,6 +47,15 @@ function pageLoad(weatherInfo) {
     let specificInfoOneTitle = document.createElement("h1");
     let specificInfoOneText = document.createElement("p");
     let specificInfoOneImage = document.createElement("img");
+
+    //Image loader
+    (async () => {
+        if(0 === 0) {
+            let theMessage = await import("./loadImage");
+            console.log(theMessage.imageSource());
+        }
+    })();
+
     specificInfoOneTitle.textContent = "Max temp:";
     specificInfoOneText.textContent = `${maxTemp} °C`;
     specificInfoOne.append(specificInfoOneTitle, specificInfoOneText, specificInfoOneImage);
@@ -72,17 +80,32 @@ function pageLoad(weatherInfo) {
     divFather.append(basicInfo, specificInfoOne, specificInfoTwo, specificInfoThree);
 
     //Now to create the elements for the future weather
+    const theFutureDiv = document.getElementById("futureWeather");
 
+    for (let i = 2; i < 7; i++) {
+        //Get the information
+        let temporalFutureDay = weatherInfo[i].day;
+        let temporalFutureMaxTemp = weatherInfo[i].maxTemp;
+        let temporalFutureMinTemp = weatherInfo[i].minTemp;
+        let temporalFuturePrecipitation = weatherInfo[i].precipitation;
 
-    console.log(weatherInfo);
-    console.log(address);
-    console.log(latitude, longitude);
-    console.log(alerts);
-    console.log(day);
-    console.log(description);
-    console.log(maxTemp);
-    console.log(minTemp);
-    console.log(precipitation);
+        //Create the html elements
+        let temporalFutureDiv = document.createElement("div");
+        temporalFutureDiv.classList.add(`future${i}`);
+        let temporalFutureTitle = document.createElement("h3");
+        let temporalFutureMinMax = document.createElement("p");
+        let temporalFutureImage = document.createElement("img");
+        let temporalFuturePrecipitationText = document.createElement("p");
+
+        //Add the content to the elements
+        temporalFutureTitle.textContent = temporalFutureDay;
+        temporalFutureMinMax.textContent = `${temporalFutureMinTemp}°C / ${temporalFutureMaxTemp} °C`;
+        temporalFuturePrecipitationText.textContent = `${temporalFuturePrecipitation} %`;
+
+        temporalFutureDiv.append(temporalFutureTitle, temporalFutureMinMax, temporalFutureImage, temporalFuturePrecipitationText);
+        theFutureDiv.appendChild(temporalFutureDiv);
+    }
+
 }
 
 export { pageLoad };
