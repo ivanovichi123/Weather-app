@@ -177,7 +177,7 @@ form > button {
   justify-content: center;
   gap: 0.5rem;
   font-size: 1.5rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #maxTemp {
@@ -187,11 +187,17 @@ form > button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 #maxTemp > p {
   font-size: 2rem;
+  padding-top: 1.5rem;
+}
+
+#maxTemp > img {
+  width: 45%;
+  height: 45%;
 }
 
 #minTemp {
@@ -201,11 +207,17 @@ form > button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 #minTemp > p {
   font-size: 2rem;
+  padding-top: 1.5rem;
+}
+
+#minTemp > img {
+  width: 45%;
+  height: 45%;
 }
 
 #precipitation {
@@ -215,11 +227,17 @@ form > button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 #precipitation > p {
   font-size: 2rem;
+  padding-top: 1.5rem;
+}
+
+#precipitation > img {
+  width: 45%;
+  height: 45%;
 }
 
 .future2 {
@@ -228,10 +246,17 @@ form > button {
   border-right: solid 2px black;
 }
 
-.future2 > p{
+.future2 > p {
   padding-top: 1rem;
 }
 
+.future2 > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 35%;
+}
 
 .future3 {
   text-align: center;
@@ -239,10 +264,17 @@ form > button {
   border-right: solid 2px black;
 }
 
-.future3 > p{
+.future3 > p {
   padding-top: 1rem;
 }
 
+.future3 > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 35%;
+}
 
 .future4 {
   text-align: center;
@@ -250,10 +282,17 @@ form > button {
   border-right: solid 2px black;
 }
 
-.future4 > p{
+.future4 > p {
   padding-top: 1rem;
 }
 
+.future4 > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 35%;
+}
 
 .future5 {
   text-align: center;
@@ -261,10 +300,17 @@ form > button {
   border-right: solid 2px black;
 }
 
-.future5 > p{
+.future5 > p {
   padding-top: 1rem;
 }
 
+.future5 > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 35%;
+}
 
 .future6 {
   text-align: center;
@@ -272,11 +318,14 @@ form > button {
   border-right: solid 2px black;
 }
 
-.future6 > p{
+.future6 > p {
   padding-top: 1rem;
 }
 
-
-
-
-
+.future6 > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 35%;
+}

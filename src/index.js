@@ -23,7 +23,6 @@ async function getWeather(location) {
     document.getElementById("weatherToday").textContent = "";
     document.getElementById("futureWeather").textContent = "";
 
-
     //Create an object with the general info from the place
     let generalInfo = new Object({
       address: theRealAnswer.resolvedAddress,
@@ -48,7 +47,6 @@ async function getWeather(location) {
     }
 
     pageLoad(weatherInformation);
-
   } catch (error) {
     //Catch when an error occur
     console.log("Oh no", error);
